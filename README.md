@@ -20,8 +20,8 @@ No Supabase project credentials were present in the project, so those need to be
 
 ## Deploy on Vercel
 
-1. Create a GitHub repository and push these site files to its `main` branch.
-2. In Vercel, choose **Add New → Project**, import the repository, and select the project root.
+1. In Vercel, choose **Add New → Project** and import [`JojinMa/Portfolio-Web`](https://github.com/JojinMa/Portfolio-Web).
+2. Select the project root.
 3. Use the **Other** framework preset. Leave the build command and output directory blank so Vercel serves the static `index.html` from the root.
 4. Deploy. Vercel will provide a shareable `*.vercel.app` URL and deploy later pushes automatically.
 5. For the contact form, run the SQL above and add the public Supabase URL and anon/publishable key in `config.js`, then commit and push the change.
