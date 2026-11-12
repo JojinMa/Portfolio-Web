@@ -10,19 +10,17 @@ A responsive personal portfolio for Jojin Mathew, with an editorial dark theme, 
 
 ## Supabase contact form
 
-1. Run [`supabase/schema.sql`](supabase/schema.sql) in the Supabase SQL editor.
-2. Put your project URL and anon/publishable key in `config.js`.
-3. Serve the folder from a static host or local web server. The form submits directly to `public.contact_messages` and points visitors to LinkedIn until configured.
+1. [`supabase/schema.sql`](supabase/schema.sql) defines the contact table and its insert-only public policy. It has been applied to the Supabase project used by this site; run it in the SQL editor only when setting up a separate project.
+2. `config.js` contains the project's URL and publishable key. The contact form submits directly to `public.contact_messages`.
+3. Serve the folder from a static host or local web server.
 
 The schema enables Row Level Security and grants only inserts to public visitors. Reads, updates, and deletes are not exposed to the anon role. Never put a service role key in `config.js` or any browser code.
 
-No Supabase project credentials were present in the project, so those need to be configured before the live form can accept messages.
+Never put a service role key or secret key in `config.js` or any browser code.
 
 ## Deploy on Vercel
 
-1. In Vercel, choose **Add New → Project** and import [`JojinMa/Portfolio-Web`](https://github.com/JojinMa/Portfolio-Web).
-2. Select the project root.
-3. Use the **Other** framework preset. Leave the build command and output directory blank so Vercel serves the static `index.html` from the root.
-4. Deploy. Vercel will provide a shareable `*.vercel.app` URL and deploy later pushes automatically.
-5. For the contact form, run the SQL above and add the public Supabase URL and anon/publishable key in `config.js`, then commit and push the change.
+1. The Vercel project is linked to [`JojinMa/Portfolio-Web`](https://github.com/JojinMa/Portfolio-Web).
+2. Select the project root and use the **Other** framework preset. Leave the build command and output directory blank so Vercel serves the static `index.html` from the root.
+3. The production branch is `main`; future pushes to it will deploy automatically.
 
