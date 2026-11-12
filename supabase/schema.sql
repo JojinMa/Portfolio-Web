@@ -12,9 +12,14 @@ alter table public.contact_messages enable row level security;
 -- Public visitors may submit a message. No public read, update, or delete access.
 drop policy if exists "Anyone can submit a contact message" on public.contact_messages;
 create policy "Anyone can submit a contact message"
-  on public.contact_messages for insert to anon, authenticated
+  on public.contact_messages for insert to anon
   with check (
     char_length(trim(name)) between 1 and 120
     and char_length(email) between 3 and 254
     and char_length(trim(message)) between 1 and 3000
   );
+
+-- Limit the Data API role to the one operation the portfolio needs.
+revoke all privileges on table public.contact_messages from public, anon, authenticated;
+grant insert on table public.contact_messages to anon;
+
