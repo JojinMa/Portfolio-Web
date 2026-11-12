@@ -6,7 +6,7 @@ A responsive personal portfolio for Jojin Mathew, with an editorial dark theme, 
 
 - Verify the location and edit the biography in `index.html` as desired.
 - Replace the illustrative interest cards with real projects as you have work to showcase.
-- The provided portrait is `portrait.jpg`.
+- The supplied portrait is `portrait.jpg`; two more converted photos appear in the moments gallery under `assets/`.
 
 ## Supabase contact form
 
@@ -23,4 +23,3 @@ Never put a service role key or secret key in `config.js` or any browser code.
 1. The Vercel project is linked to [`JojinMa/Portfolio-Web`](https://github.com/JojinMa/Portfolio-Web).
 2. Select the project root and use the **Other** framework preset. Leave the build command and output directory blank so Vercel serves the static `index.html` from the root.
 3. The production branch is `main`; future pushes to it will deploy automatically.
-
